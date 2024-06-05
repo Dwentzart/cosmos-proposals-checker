@@ -1,0 +1,32 @@
+state-path = "/root/cosmos-proposals-checker/assets/valid-state.json"
+mutes-path = "/root/cosmos-proposals-checker/assets/mutes-state.json"
+interval = "@hourly"
+
+[log]
+level = "trace"
+json = false
+
+[[chains]]
+name = "vota-sf"
+pretty-name = "vota-sf\n@dwentz"
+keplr-name = "vota-sf"
+mintscan-prefix = "vota-sf"
+lcd-endpoints = ["https://vota-sf-rest.dorafactory.org"]
+wallets = [
+    { address = "dora1gx63mdytxuej9s3lk3n9hkw6mhuhvphr3z9y8z", alias = "validator wallet" }
+]
+type = "cosmos"
+proposals-type = "v1beta1"
+
+[chains.explorer]
+proposal-link-pattern = "https://vota-sf-explorer.dorafactory.org/vota-sf/gov/%s"
+wallet-link-pattern = "https://vota-sf-explorer.dorafactory.org/account/%s"
+
+[pagerduty]
+url = "https://events.eu.pagerduty.com"
+api-key = ""
+
+# Telegram notifier config.
+[telegram]
+token = ""
+chat = 
